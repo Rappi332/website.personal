@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            position: relative;
+            overflow-y: scroll;
+            min-height: 100vh;
+            
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-top: 20vh;
+            animation: fadeIn 2s ease;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 20px;
+            animation: fadeIn 3s ease;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 20px auto;
+            line-height: 1.6;
+            max-width: 600px;
+            animation: fadeIn 4s ease;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            animation: fadeIn 5s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            z-index: 3;
+            position: relative;
+        }
+
+        button:hover {
+            background-color: #ff8a5c;
+            transform: scale(1.1);
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff6f61;
+            transform: rotate(45deg);
+            animation: float 4s infinite ease-in-out;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff6f61;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 10px;
+            top: 0;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: snowfall 8s linear infinite;
+        }
+
+        @keyframes snowfall {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) translateX(-20px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(45deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(45deg);
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 20px;
+            animation: fadeIn 2s ease;
+        }
+
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.2);
+            opacity: 0.8;
+        }
+
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="initial-screen">
+        <h1>Hallo Sayangku Cinta!</h1>
+        <h2>Happy Birthday Sayang!🎂 ❤️</h2>
+        <h2>25-07-2007</h2>
+        <button onclick="showGallery()">Ayo Diklik</button>
+    </div>
+
+    <div id="gallery-screen" class="hidden">
+        <h1>Happy Birthday Sayang❤️</h1>
+        <p>"Selamat Bertambah usia, Ya Sayangnya Aku ! Semoga di hari ulang tahun kamu yang ke 18 ini membawa kebahagiaan dan sehat selalu, semakin semangat belajar di lpknya, gaboleh cengeng terus ya!. Aku bersyukur bisa bersama kamu selama ini, berbagi tawa, dan saling mendukung. Semoga segala impian dan harapanmu tercapai, dan semoga kita selalu bisa tumbuh bersama, baik dalam suka maupun duka. Aku sayang kamu."</p>
+        <p>Selamat ulang tahun, Sayang! 🎂</p>
+        <div class="gallery">
+            <img src="images/cute 1.jpeg" alt="Foto Lucu 1">
+            <img src="images/cute 2.jpeg" alt="Foto Lucu 2">
+            <img src="images/cute 3.jpeg" alt="Foto Lucu 3">
+            <img src="images/cute 4.jpeg" alt="Foto Lucu 4">
+            <img src="images/cute 6.jpeg" alt="Foto Lucu 5">
+        </div>
+        <div class="button-group">
+            <button onclick="showInitial()">Kembali</button>
+            <button onclick="showCake()">Next</button>
+        </div>
+    </div>
+
+    <div id="cake-screen" class="hidden">
+        <h1>Surprise! 🎂</h1>
+        <p>Maaf yaa aku belum se effort kamu, aku buatin website ini setidaknya ada effort sedikit,
+            Semoga kamu happy maaf masih jelek karna seadanya sayang. I lovyou sayang❤️. 
+            Sekali lagi Happy Birthday!!<br>
+            Create: By Rappi332</p>
+        <img src="images/jelek2.jpeg" alt="Kue Ulang Tahun" style="width: 200px; height: 200px; margin: 20px auto; border-radius: 50%; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+        <button onclick="showGallery()">Kembali ke Galeri</button>
+    </div>
+
+    <script>
+        function showGallery() {
+            document.getElementById('initial-screen').classList.add('hidden');
+            document.getElementById('gallery-screen').classList.remove('hidden');
+            document.getElementById('cake-screen').classList.add('hidden');
+        }
+
+        function showInitial() {
+            document.getElementById('gallery-screen').classList.add('hidden');
+            document.getElementById('initial-screen').classList.remove('hidden');
+        }
+
+        function showCake() {
+            document.getElementById('gallery-screen').classList.add('hidden');
+            document.getElementById('cake-screen').classList.remove('hidden');
+        }
+
+        for (let i = 0; i < 30; i++) {
+            let heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 4 + 's';
+            document.body.appendChild(heart);
+        }
+
+        for (let i = 0; i < 50; i++) {
+            let particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = Math.random() * 100 + 'vh';
+            particle.style.animationDelay = Math.random() * 4 + 's';
+            document.body.appendChild(particle);
+        }
+
+        for (let i = 0; i < 100; i++) {
+            let snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDelay = Math.random() * 4 + 's';
+            snowflake.style.animationDuration = 4 + Math.random() * 4 + 's';
+            snowflake.style.opacity = Math.random();
+            document.body.appendChild(snowflake);
+        }
+    </script>
+</body>
+
+<audio id="bg-music" loop>
+    <source src="musikk.mpeg" type="audio/mpeg">
+</audio>
+
+</html>
